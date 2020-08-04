@@ -74,3 +74,25 @@ body {
     color: white;
 }
 
+/*Responsive index.html*/
+@media screen and (max-width: 1024px) {
+    .main--container {
+        grid-template-rows: repeat(3, 280px);
+        gap:  2.2em;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main--container {
+        grid-template-rows: repeat(3, 190px);
+        gap: 1em;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .main--container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-rows: repeat(5, 180px);
+    }
+}
