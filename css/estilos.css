@@ -33,9 +33,22 @@ body {
     color: white;
 }
 
-.header__navbar, 
-.header--list {
-   width: 100vw;
+.header--container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo--container {
+    width: 180px;
+    height: 5.7rem;
+}
+
+.logo--container img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }
 
 .header--list {
@@ -43,13 +56,13 @@ body {
 }
 
 .header__list--item {
-    width: 35%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     border: 1px solid white;
     height: 6rem;
     list-style: none;
+    margin: 0 10px;
 }
 /* END HEADER */
 
@@ -88,6 +101,12 @@ body {
 /* END FOOTER */
 
 /*Responsive index.html*/
+@media screen and (max-width: 1440px) {
+    .main--container {
+        grid-template-rows: repeat(3, 350px);
+        gap: 1.5em;
+    }
+}
 @media screen and (max-width: 1024px) {
     .main--container {
         grid-template-rows: repeat(3, 280px);
@@ -98,7 +117,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .main--container {
-        grid-template-rows: repeat(3, 190px);
+        grid-template-rows: repeat(3, 210px);
         gap: 1em;
     }
 }
@@ -106,6 +125,7 @@ body {
 @media screen and (max-width: 425px) {
     .main--container {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        grid-template-rows: repeat(5, 180px);
+        grid-template-rows: repeat(5, 200px);
+        padding: 20px;
     }
 }
