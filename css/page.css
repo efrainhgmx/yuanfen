@@ -1,11 +1,11 @@
 .page {
     display: grid;
-    grid-template-columns: 1fr 25%;
+    grid-template-columns: 1fr 1fr 25%;
     grid-template-rows: 30% 1fr 1fr;
     gap: 10px;
-    grid-template-areas: "header header"
-                         "content aside"
-                         "content aside";
+    grid-template-areas: "header header header"
+                         "content content aside"
+                         "content  content aside";
     height: 95vh;
     padding: 10px;
 }
@@ -26,4 +26,21 @@
     grid-area: aside;
     background-color: gray;
     border: 1px solid black;
+}
+
+.header,
+.content,
+.aside {
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 375px) {
+    .page {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: "header header header"
+                             "content content content"
+                             "content content content"
+                             "content content content"
+                             "aside aside aside";
+    }
 }
