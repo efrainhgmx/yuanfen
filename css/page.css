@@ -1,5 +1,8 @@
 :root {
     --color-fondo: #f0e8e6;
+    --Fuente-cursiva: 'Dancing Script', cursive;
+    --Fuente-principal: 'Mulish', sans-serif;
+    --Negrita-cursiva: 700;
 }
 
 * {
@@ -7,6 +10,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: var(--Fuente-principal);
+    font-weight: 500;
+}
+
 .page {
     display: grid;
     grid-template-columns: 1fr 1fr 25%;
@@ -18,11 +27,11 @@
     height: 95vh;
     padding: 8px;
 }
-
+/* HEADER SECTION */
 .header {
     grid-area: header;
     background-color: var(--color-fondo);
-    border: 1px solid black;
+    border: 1px solid gray;
 }
 
 .navbar {
@@ -39,23 +48,48 @@
     list-style: none;
 }
 
+.title {
+    font-family: var(--Fuente-cursiva);
+    font-weight: var(--Negrita-cursiva);
+    font-size: 50px;
+}
+/* END HEADER */
+
+/* MAIN SECTION */
 .content {
     grid-area: content;
     background-image: url('../img/prueba-2.jpeg');
+    background-color: rgba(255, 255, 255, .4);
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid black;
+    border: 1px solid gray;
    /*  AGRUPAR LO QUE SE REPITE */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; */
+}
+
+.content--container {
+    height: 100%;
+    width: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.main__subtitle {
+    font-family: var(--Fuente-cursiva);
+    font-weight: var(--Negrita-cursiva);
+    font-size: 2.5em;
 }
 
 .aside {
     grid-area: aside;
     background-color: var(--color-fondo);
-    border: 1px solid black;
+    border: 1px solid gray;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -68,7 +102,8 @@
     border-radius: 10px;
 }
 
-@media screen and (max-width: 375px) {
+/* Responsive Section */
+@media screen and (max-width: 414px) {
     .page {
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: "header header header"
