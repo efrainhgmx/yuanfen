@@ -10,9 +10,6 @@
     --sobra-caja: -1px 6px 18px 4px #848181;
 }
 
-
-}
-
 body {
     height: 100vh;
     display: flex;
@@ -92,9 +89,9 @@ body {
 
  
 .item img {
-    display: block; 
-    width: 100%;
+    display: block;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 } 
 
@@ -128,9 +125,10 @@ body {
 }
 @media screen and (max-width: 1024px) {
     .main--container {
+        min-height: 850px;
         grid-template-rows: repeat(3, 280px);
         gap:  2.2em;
-        margin: auto;
+        margin: 25px auto;
     }
 }
 
@@ -144,7 +142,8 @@ body {
 @media screen and (max-width: 425px) {
     .main--container {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        grid-template-rows: repeat(5, 200px);
+        grid-template-rows: repeat(9, minmax(160px, 180px));
+        gap: 2em;
         padding: 20px;
     }
 }
