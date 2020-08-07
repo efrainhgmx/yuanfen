@@ -85,6 +85,10 @@ body {
     color: black;
     text-decoration: none;
 }
+
+.hide {
+    display: none;
+}
 /* END HEADER */
 
 /* MAIN SECTION */
@@ -186,6 +190,35 @@ body {
     .header__navbar {
         display: none;
     }
+
+    .menu {
+        position:fixed;
+        background: rgba(255, 255, 255, .8);
+        z-index: 3;
+        top: 0;
+        right: -100vw;
+        width: 100vw;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .4s;
+      }
+    
+      .menu.is-active {
+        right: 0;
+      }
+
+    .submenu {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+      }
+
+      .hide {
+          display: inherit;
+      }
 
     .main--container {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
